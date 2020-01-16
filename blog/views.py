@@ -3,14 +3,25 @@ from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
+from django.views import generic
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
 
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+#def post_list(request):
+#    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+#    return render(request, 'blog/post_list.html', {'posts': posts})
+
+class Post_ListView(generic.ListView):
+    model = posts
+    template_name = 'blog/post_list.html'
+
+#def post_detail(request, pk):
+#    post = get_object_or_404(Post, pk=pk)
+#    return render(request, 'blog/post_detail.html', {'post': post})
+
+class Post_DetailView(generic.DetailView):
+    model = Post
+    template_name = 'blog/post_detail.html'
+
 
 def post_new(request):
     if request.method == "POST":
@@ -38,3 +49,4 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+    
