@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$=c9+pc-22z)&t8$3&ft_23kgu0+3q+dhi22+vzabc88i)mxg('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -120,10 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 #웹페이지에서 사용될 정적파일 최상위 URL경로
-#STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 #서비스 단계에서 정적파일을 한곳에 모아둔 곳
 #debug가 true이면 작동하지 않는다.
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #개발단계에서 정적파일들의 위치
 #STATICFILES_DIRS = (
