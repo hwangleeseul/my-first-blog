@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #서비스 단계에서 정적파일을 한곳에 모아둔 곳
 #debug가 true이면 작동하지 않는다.
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #개발단계에서 정적파일들의 위치
 #STATICFILES_DIRS = (
