@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$=c9+pc-22z)&t8$3&ft_23kgu0+3q+dhi22+vzabc88i)mxg('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -126,6 +126,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #개발단계에서 정적파일들의 위치
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, "static"),
+#)
